@@ -1,3 +1,5 @@
+import { Platform } from "react-native";
+
 export const getLast7Days = () => {
   const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const result = [];
@@ -67,3 +69,5 @@ export const getYearsRange = (startYear: number, endYear: number): any => {
   // return result;
   return result.reverse();
 };
+
+export const isIos = Platform.OS === "ios";

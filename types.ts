@@ -1,18 +1,11 @@
-import { Href } from "expo-router";
-import { Firestore, Timestamp } from "firebase/firestore";
+import { Timestamp } from "firebase/firestore";
 import { Icon } from "phosphor-react-native";
 import React, { ReactNode } from "react";
 import {
-  ActivityIndicator,
-  ActivityIndicatorProps,
-  ImageStyle,
-  PressableProps,
   TextInput,
   TextInputProps,
-  TextProps,
   TextStyle,
-  TouchableOpacityProps,
-  ViewStyle,
+  ViewStyle
 } from "react-native";
 
 export type ScreenWrapperProps = {
@@ -29,15 +22,6 @@ export type accountOptionType = {
   icon: React.ReactNode;
   bgColor: string;
   routeName?: any;
-};
-
-export type TypoProps = {
-  size?: number;
-  color?: string;
-  fontWeight?: TextStyle["fontWeight"];
-  children: any | null;
-  style?: TextStyle;
-  textProps?: TextProps;
 };
 
 export type IconComponent = React.ComponentType<{
@@ -110,13 +94,6 @@ export interface InputProps extends TextInputProps {
   inputRef?: React.RefObject<TextInput>;
   //   label?: string;
   //   error?: string;
-}
-
-export interface CustomButtonProps extends TouchableOpacityProps {
-  style?: ViewStyle;
-  onPress?: () => void;
-  loading?: boolean;
-  children: React.ReactNode;
 }
 
 export type ImageUploadProps = {
