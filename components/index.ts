@@ -9,3 +9,6 @@ export * from './common';
 
 // Welcome Components
 export * from './welcome';
+
+// Auth Components
+export * from './auth';

@@ -47,11 +47,6 @@ export type HeaderProps = {
   rightIcon?: ReactNode;
 };
 
-export type BackButtonProps = {
-  style?: ViewStyle;
-  iconSize?: number;
-};
-
 export type TransactionType = {
   id?: string;
   type: string;
@@ -86,15 +81,6 @@ export type TransactionItemProps = {
   index: number;
   handleClick: Function;
 };
-
-export interface InputProps extends TextInputProps {
-  icon?: React.ReactNode;
-  containerStyle?: ViewStyle;
-  inputStyle?: TextStyle;
-  inputRef?: React.RefObject<TextInput>;
-  //   label?: string;
-  //   error?: string;
-}
 
 export type ImageUploadProps = {
   file?: any;

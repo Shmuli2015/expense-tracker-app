@@ -1,7 +1,7 @@
 import { colors } from "@/constants/theme";
 import { verticalScale } from "@/utils/styling";
 import React from "react";
-import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
+import { Pressable, StyleSheet, Text, TextProps, TextStyle } from "react-native";
 
 interface TypoProps {
   size?: number;
@@ -10,6 +10,7 @@ interface TypoProps {
   children: any | null;
   style?: TextStyle;
   textProps?: TextProps;
+  onPress?: () => void;
 };
 
 const Typo = ({
@@ -19,12 +20,24 @@ const Typo = ({
   children,
   style,
   textProps = {},
+  onPress,
 }: TypoProps) => {
   const textStyle = {
     fontSize: size ? verticalScale(size) : verticalScale(18),
     color,
     fontWeight,
   };
+
+  if (onPress) {
+    return (
+      <Pressable onPress={onPress}>
+        <Text style={[textStyle, style]} {...textProps}>
+          {children}
+        </Text>
+      </Pressable>
+    );
+  }
+
   return (
     <Text style={[textStyle, style]} {...textProps}>
       {children}
